@@ -1,7 +1,7 @@
 LLMCrowd documentation
 ======================
 
-Hello~
+Hello~ This is the documentation of the LLM-based crowd scenario generation.
 
 
 .. toctree::
