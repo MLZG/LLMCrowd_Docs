@@ -1,0 +1,9 @@
+*.py[cod]
+__pycache__/
+*.cpython-*.pyc
+
+.vscode/
+.idea/
+
+build/
+
