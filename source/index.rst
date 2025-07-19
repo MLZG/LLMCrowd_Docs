@@ -5,15 +5,7 @@ Hello~ This is the documentation of the LLM-based crowd scenario generation in a
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents 1:
+   :maxdepth: 3
+   :caption: Developing
 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents 2:
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents 3:
+   pipeline/index
