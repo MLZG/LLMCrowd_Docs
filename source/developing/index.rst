@@ -6,6 +6,6 @@ Only used for developing.
 
 .. toctree::
    :maxdepth: 2
-   :caption:
+   :caption: Pipeline
 
    pipeline/index
