@@ -6,6 +6,6 @@ Pipeline.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Environment
+   :caption: Pipeline
 
    environment
