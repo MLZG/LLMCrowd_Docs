@@ -1,7 +1,7 @@
-Components
+Method Components
 ======================
 
-This page introduces the fundamental components of the pipeline.
+This page introduces the fundamental components of the generation method.
 
 .. toctree::
    :maxdepth: 2

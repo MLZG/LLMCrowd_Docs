@@ -1,14 +1,14 @@
-LLMCrowd documentation
+LLMCrowd Documentation
 ======================
 
 This is the documentation of the LLM-based synthesis of richly-labeled crowd scenario.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Developing
 
    Pipeline <developing/pipeline/index>
-   Components <developing/components/index>
+   Method Components <developing/method_components/index>
    Dataset <developing/dataset/index>
    Simulator <developing/simulator/index>
