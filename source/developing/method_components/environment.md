@@ -36,9 +36,9 @@ Each entity is an instance of one of the aforementioned categories. For each ent
 
 From these annotations, the top-view semantic map of the environment is obtained:  
 <p align = "center">
-<img src="../../_static/mall_map/topview_floor1.png" width=33% style="margin-right: 0px; margin-left: 0px;">
-<img src="../../_static/mall_map/topview_floor2.png" width=33% style="margin-right: 0px; margin-left: 0px;">
-<img src="../../_static/mall_map/topview_floor3.png" width=33% style="margin-right: 0px; margin-left: 0px;">
+<img src="../../_static/mall_map/topview_floor1.png" width=32% style="margin-right: 0px; margin-left: 0px;">
+<img src="../../_static/mall_map/topview_floor2.png" width=32% style="margin-right: 0px; margin-left: 0px;">
+<img src="../../_static/mall_map/topview_floor3.png" width=32% style="margin-right: 0px; margin-left: 0px;">
 </p>
 
 Among all the entities, those that can be accessed by characters on a semantic level are filtered out. These entities are assigned additional attributes and defined as *states*. All states and their transfer relationships form a structured representation of the environment. For a detailed definition and structure of *state*, please refer to [state](https://llmcrowd.readthedocs.io/en/latest/developing/method_components/state.html).
@@ -52,8 +52,8 @@ From a micro perspective, internal modeling of each entity is included:
 <img src="../../_static/mall/stores/mall_oldtown.jpg" width=32% style="margin-right: 3px; margin-left: 3px;">
 </p>
 <p align = "center">    
-<img src="../../_static/mall/stores/mall_elec1.png" width=57% style="margin-right: 6px; margin-left: 6px;">
-<img src="../../_static/mall/stores/mall_fashion.jpg" width=39% style="margin-right: 6px; margin-left: 6px;">
+<img src="../../_static/mall/stores/mall_elec1.png" width=57% style="margin-right: 3px; margin-left: 3px;">
+<img src="../../_static/mall/stores/mall_fashion.jpg" width=39% style="margin-right: 3px; margin-left: 3px;">
 </p>
 
 Characters in the environment can navigate around (via a navigation mesh), perform specific actions, and interact with objects and facilities, such as looking into a mirror, sitting on a sofa to rest, or using an elevator. These functionalities are specifically defined and implemented in the [Simulator](https://llmcrowd.readthedocs.io/en/latest/developing/simulator/index.html) part.
