@@ -1,7 +1,7 @@
 # Overview
 
 <p align = "center">
-<img src="../../_static/pipeline/pipeline_and_components.JPG" width=99% style="margin-right: 0px; margin-left: 0px;">
+<img src="../../_static/pipeline/pipeline_and_components.PNG" width=99% style="margin-right: 0px; margin-left: 0px;">
 </p>
 
 
