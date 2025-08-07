@@ -4,32 +4,31 @@
 An **action** is defined as a behavior or activity that a character can perform within the environment. By executing a specific action, a character can carry out a series of semantically meaningful behaviors. The continuous execution of multiple actions allows a character to engage in sustained, long-term activity within the environment.
 
 ## Action Hierarchy
-When considering an **action** of a character within the environment, there are many levels of granularity to take into account. For example, a character could be "shopping in a clothing store", "asking the store clerk for advice while shopping", "speaking when asking for advice", or even "slightly raising the arm while gesturing" during the process. All of these are actions performed by the character. However, it is impractical to break down actions to an infinite level of detail. Therefore, in this system, we have designed a hierarchical framework for actions, defining them in a three-tiered hierarchy: **high-level action**, **mid-level action**, and **low-level action**.
+When considering a character's action within an environment, there are various levels of granularity to account for. For instance, a character could be "shopping in a clothing store," "asking the store clerk for advice," "speaking while asking for advice," or even "slightly raising an arm while gesturing" during the process. However, breaking actions down to an infinite level of detail is impractical. Therefore, we have designed a hierarchical framework that defines actions in three tiers: **high-level action**, **mid-level action**, and **low-level action**.
 
 ### High-level Action
-A high-level action is defined as a general decision made by a character within the environment. It can be understood simply as "what should I do next in this shopping mall?" It encapsulates a character’s decision-making process, such as "have meal at restaurant," "browse store," "get a haircut at barber shop," or navigational behaviors, such as "go to the gym". Additionally, high-level actions can involve temporary decisions, such as "wait outside the restaurant" when it is crowded. 
+A high-level action is defined as a broad decision made by a character within the environment. It can be understood as simply "what should I do next in this shopping mall?" This type of action encompasses a character's decision-making process, such as "have a meal at a restaurant," "browse a store," "get a haircut at the barber shop," or navigational behaviors like "go to the gym." High-level actions can also involve temporary decisions, such as "wait outside the restaurant" when it is crowded.
 
-In summary, a high-level action refers to a character’s overarching decision or goal. It typically represents a complete event and is usually a purposeful action with a clear objective.
+In summary, a high-level action represents a character’s overarching decision or goal. It typically corresponds to a complete event and is usually purposeful, with a clear objective.
 
 ### Mid-level Action
-A mid-level action can be viewed as a breakdown of a high-level action into more specific tasks. Each high-level action corresponds to two types of mid-level actions: **fixed mid-level actions** and **optional mid-level actions**.
+A mid-level action is a more specific task that breaks down a high-level action into smaller components. Each high-level action corresponds to two types of mid-level actions: **fixed mid-level actions** and **optional mid-level actions**.
 
-  - **Fixed Mid-level Actions**: These are the mandatory sub-actions that must be included when executing a high-level action. For example, the high-level action "have meal" corresponds to the fixed mid-level actions of "order, eat, checkout." Every high-level action is always associated with one or more fixed mid-level actions.
+  - **Fixed Mid-level Actions**: These are mandatory sub-actions that must be performed when executing a high-level action. For example, the high-level action "have meal" corresponds to the fixed mid-level actions of "order," "eat," and "checkout." Every high-level action is always associated with one or more fixed mid-level actions.
 
-  - **Optional Mid-level Actions**: These represent actions that can be randomly inserted into the execution of the fixed mid-level action sequence, such as "talk with the staff" or "make a phone call." These actions can be seen as random events designed to introduce variety and unpredictability into the execution of high-level actions. A high-level action may have zero or multiple optional mid-level actions.
+  - **Optional Mid-level Actions**: These represent actions that can be inserted randomly into the sequence of fixed mid-level actions, such as "talk with the staff" or "make a phone call." Optional mid-level actions introduce variety and unpredictability into the execution of high-level actions. A high-level action may involve zero or multiple optional mid-level actions.
 
-During the execution of a high-level action, it is typically broken down into several mid-level actions. Note that while most mid-level actions are executed in sequence, some mid-level actions can occur simultaneously, such as "walking" while "making a phone call."
+During the execution of a high-level action, it is typically broken down into several mid-level actions. While most mid-level actions are performed in sequence, some can occur simultaneously, such as "walking" while "making a phone call."
 
 ### Low-level Action
-A low-level action represents the specific implementation of each mid-level action within the 3D simulation. It includes the character's physical movements, individual actions, interactive actions, cross-actions, and functional tasks. The specific implementation of a low-level action may be closely related to the corresponding mid-level and high-level actions. For further details, please refer to the [Simulator](https://llmcrowd.readthedocs.io/en/latest/developing/simulator/index.html) part.
+A low-level action represents the specific implementation of each mid-level action within the 3D simulation. It includes the character's physical movements, individual actions, interactive behaviors, cross-actions, and functional tasks. The implementation of a low-level action is closely tied to the corresponding mid-level and high-level actions. For more details, please refer to the [Simulator](https://llmcrowd.readthedocs.io/en/latest/developing/simulator/index.html) part.
 
-Generally, **high-level actions** provide an overview of the behavior and broad parameters, while **mid-level actions** further specify the behavior and its parameters. **Low-level actions**, on the other hand, are directly related to the simulator.
+In general, high-level actions provide an overview of the behavior and its broad parameters, while mid-level actions further refine the behavior and its specific parameters. Low-level actions, in contrast, are directly linked to the simulator's execution.
 
 ## Action Pool
-
 In this system, we have pre-defined a series of plausible action templates, which are organized into an **Action Pool**. This pool represents the set of behaviors available for a character to choose from within the shopping mall environment. 
 
-Both **high-level action** and **mid-level action** are included in the action pool, which are pre-defined with detailed information, including name, description, category, parameters, parameter explanations, and more. Additionally, the action pool also includes the potential structure of the actions.
+Both high-level actions and mid-level actions are included in the action pool, each pre-defined with detailed information such as name, description, category, parameters, parameter explanations, and more. Additionally, the action pool also includes the potential structure of these actions.
 
 ### Content
 The action pool contains a total of 12 high-level actions and 22 mid-level actions.
@@ -37,15 +36,13 @@ The action pool contains a total of 12 high-level actions and 22 mid-level actio
 High-level Action Template:
 ```json
 {
-      "action id": <str>,
-      "action name": <str>,
-      "action category": <str>,
-      "action description": <str>,
-      "fixed mid-level actions":  <list of str>,
-      "optional mid-level actions":  <list of str>,
-      "definition of param 1": <str>,
-      "definition of param 2": <str>,
-      ...
+    "action id": "<str>",
+    "action name": "<str>",
+    "action category": "<str>",
+    "action description": "<str>",
+    "fixed mid-level actions": ["<str>"],
+    "optional mid-level actions": ["<str>"],
+    "definition of param i": "<str>"
 }
 ```
 In the high-level action template, the following fields are pre-defined:
@@ -60,52 +57,54 @@ In the high-level action template, the following fields are pre-defined:
 Mid-level Action Template:
 ```json
 {
-      "action id": <str>,
-      "action name": <str>,
-      "action category": <str>,
-      "action description": <str>,
-      "definition of param 1": <str>,
-      "definition of param 2": <str>,
-      ...
+      "action id": "<str>",
+      "action name": "<str>",
+      "action category": "<str>",
+      "action description": "<str>",
+      "definition of param i": "<str>"
 }
 ```
 In the mid-level action template, the following fields are pre-defined:
 - action id: <str> – The index of the action.
 - action name: <str> – The name of the action.
-- action category: <str> in [fixed, optional, fixed or optional] – Specifies whether the mid-level action is fixed, optional, or can be either.
+- action category: <str> in ["fixed", "optional", "fixed or optional"] – Specifies whether the mid-level action is fixed, optional, or can be either.
 - action description: <str> – A natural language description of the action.
 - definition of param: <str> – Describes the parameters required for the execution of the action, in natural language.
 
 There may be overlap between the parameters of high-level and low-level actions. In such cases, the high-level parameters are more generalized, while the low-level parameters are more specific. If the low-level parameters are sufficient for the simulator, they take precedence. If not, the high-level parameters are used to supplement them.
 
-
 ### Extensibility
-The **Action Pool** is built as an extensible structure, supporting the addition of new actions. When expanding the pool, the following aspects usually need to be maintained:
-- Add both mid-level actions and high-level actions to the pool. 
-- Each state needs to be updated with its corresponding "supported actions."
-- The actual implementation of the new action within the simulator must be handled.
+The **Action Pool** is designed as an extensible framework, allowing for the addition of new actions. When expanding the pool, the following considerations must typically be addressed:
+- Add both mid-level and high-level actions to the pool.
+- Update each state with its corresponding "supported actions."
+- Implement the new action within the simulator.
 
-In summary, the action pool serves as an expandable library of action templates, covering all possible actions a character can perform in the environment. During pipeline execution, when a specific action is needed, steps like selecting the action template, defining its structure, and setting the parameters should be performed.
-
+In summary, the action pool functions as a flexible library of action templates, encompassing all potential actions a character can perform within the environment. During pipeline execution, when a specific action is required, instantiate steps such as selecting the action template, defining its structure, and setting the parameters should be carried out.
 
 ## Action Instance
-A complete **Action Instance** is defined as a specific high-level action along with its associated sub-structure and parameters. It is instantiated from the action templates within the **Action Pool**.
+A complete **Action Instance** is defined as a specific high-level action along with its associated sub-structure and parameters. It is instantiated from the action templates stored within the **Action Pool**.
 
-### Structure:
-The structure of an action instance is organized as an ordered multi-way tree, consisting of a high-level action and several mid-level actions as nodes. The root node of the tree represents the high-level action, while the other nodes represent mid-level actions.
+### Structure
+The structure of an action instance is organized as an ordered multi-way tree, consisting of a high-level action and several mid-level actions as nodes. The root node represents the high-level action, while the remaining nodes represent the mid-level actions.
 
-In this ordered multi-way tree, except for the root node, nodes at the same level represent actions that are executed sequentially. The parent-child relationship between two nodes (other than the root node) indicates that the actions represented by these nodes are executed concurrently. Here is an example:
+In this ordered multi-way tree, except for the root node, nodes at the same level represent actions that are executed sequentially. The parent-child relationship between two nodes (other than the root node) indicates that the actions represented by these nodes are executed concurrently.
+
+Here is an example:
 
 <p align = "center">
 <img src="../../_static/action_structure/action_instance.jpg" width=80% style="margin-right: 0px; margin-left: 0px;">
 </p>
 
-In this example, **dark green** node represents the high-level action, **light green** nodes represent the fixed mid-level actions, and **light orange** nodes represent the optional mid-level actions. The behavior represented by this action instance is as follows: The character first listens to the stuff explain the menu. Then, the character places an order, taking a moment to think about what to order during the process. After placing the order, the character looks around to find a seat. Once seated, the character eats the meal, during which they make a phone call and play with their phone for a while. Finally, the character checkouts and leaves.
+In this example, the **dark green** node represents the high-level action, the **light green** nodes represent fixed mid-level actions, and the **light orange** nodes represent optional mid-level actions. The behavior represented by this action instance is as follows:
 
-As defined, fixed mid-level actions must always be executed and will consistently appear at the second level of the tree, preserving their order. Optional mid-level actions, depending on their timing, can either be placed at the same level, occurring sequentially, or inserted as child nodes to represent concurrent actions.
+<blockquote>
+*The character first listens to the staff explain the menu. Then, the character places an order, taking a moment to think about what to order during the process. After placing the order, the character looks around to find a seat. Once seated, the character eats the meal, during which they make a phone call and play with their phone for a while. Finally, the character checks out and leaves.*
+</blockquote>
 
-### Parameters:
-
-Each action instance must include the specific parameter settings for all actions, in accordance with the parameter descriptions defined in the corresponding action templates.
+As defined, fixed mid-level actions must always be executed and will consistently appear at the second level of the tree, maintaining their order. Optional mid-level actions, depending on their timing, can either be placed at the same level (executing sequentially) or inserted as child nodes to represent concurrent actions.
 
 
+### Parameters
+Each action instance must include the specific parameter settings for all actions, in accordance with the parameter descriptions defined in the corresponding action templates. This ensures that the action is properly executed within the simulator, with all necessary details and conditions accounted for.
+
+Each state has predefined its supported high-level actions. Based on the action templates in the action pool and the structure of the action instance, an action can be instantiated. The instantiated action is then realized by the [Simulator](https://llmcrowd.readthedocs.io/en/latest/developing/simulator/index.html) as specific 3D animations, bringing the action to life in the environment.
