@@ -10,6 +10,7 @@
   [memory, action_feedback, state_observation]
   这部分可以再想想，其实就是我要告诉LLM什么内容：我以前做过什么事情(memory)，我现在在哪(state)，我刚刚做完了什么事情(action feedback)，我周围有什么，我能感知到什么(observation， PS:observation is related to action feedback)。就是我要告诉LLM的上下文。
   比如我现在再理发店，刚刚到，看到理发店满员了；比如我现在在衣服店，刚browse完出来，(选: 看到附近有XXX)。
+  observation也可以包含对目前所处的state的观测，比如把state的description拿过来，当成是对其基本属性的观察。
 - action代表【人物】在目前所处的state下，基于context的内容，做出的action。每个action都是一个structural的high-level action，可以分解为多个mid-level action的sequence。
   action在实际执行结束后会返回一些feedback，比如执行成功与否，执行结束之后的观测，作为下个time step的context的一部分。
 Example behavior：
