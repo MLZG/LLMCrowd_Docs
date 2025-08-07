@@ -85,7 +85,7 @@ In summary, the action pool functions as a flexible library of action templates,
 A complete **Action Instance** is defined as a specific high-level action along with its associated sub-structure and parameters. It is instantiated from the action templates stored within the **Action Pool**.
 
 ### Structure
-The structure of an action instance is organized as an ordered multi-way tree, consisting of a high-level action and several mid-level actions as nodes. The root node represents the high-level action, while the remaining nodes represent the mid-level actions.
+The structure of an action instance is organized as an **ordered multi-way tree**, consisting of a high-level action and several mid-level actions as nodes. The root node represents the high-level action, while the remaining nodes represent the mid-level actions.
 
 In this ordered multi-way tree, except for the root node, nodes at the same level represent actions that are executed sequentially. The parent-child relationship between two nodes (other than the root node) indicates that the actions represented by these nodes are executed concurrently.
 
@@ -98,7 +98,7 @@ Here is an example:
 In this example, the **dark green** node represents the high-level action, the **light green** nodes represent fixed mid-level actions, and the **light orange** nodes represent optional mid-level actions. The behavior represented by this action instance is as follows:
 
 <blockquote>
-*The character first listens to the staff explain the menu. Then, the character places an order, taking a moment to think about what to order during the process. After placing the order, the character looks around to find a seat. Once seated, the character eats the meal, during which they make a phone call and play with their phone for a while. Finally, the character checks out and leaves.*
+The character first listens to the staff explain the menu. Then, the character places an order, taking a moment to think about what to order during the process. After placing the order, the character looks around to find a seat. Once seated, the character eats the meal, during which they make a phone call and play with their phone for a while. Finally, the character checks out and leaves.
 </blockquote>
 
 As defined, fixed mid-level actions must always be executed and will consistently appear at the second level of the tree, maintaining their order. Optional mid-level actions, depending on their timing, can either be placed at the same level (executing sequentially) or inserted as child nodes to represent concurrent actions.
