@@ -57,11 +57,11 @@ In the high-level action template, the following fields are pre-defined:
 Mid-level Action Template:
 ```json
 {
-      "action id": "<str>",
-      "action name": "<str>",
-      "action category": "<str>",
-      "action description": "<str>",
-      "definition of param i": "<str>"
+    "action id": "<str>",
+    "action name": "<str>",
+    "action category": "<str>",
+    "action description": "<str>",
+    "definition of param i": "<str>"
 }
 ```
 In the mid-level action template, the following fields are pre-defined:
