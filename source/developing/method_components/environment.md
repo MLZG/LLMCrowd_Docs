@@ -27,12 +27,12 @@ All the stores, areas, and facilities within the environment are extracted, with
 `[store, restaurant, area, toilet, lift, escalator, floor, unavailable area, useless]`.
 
 Each entity is an instance of one of the aforementioned categories. For each entity, the following annotations are provided:  
-- **id**: Unique identifier.
-- **name**: The actual name of the entity within the shopping mall.
-- **category**: The category label.
-- **description**: A textual description of the entity.
-- **boundary**: The coordinates that define the entity's boundary.
-- **doors**: Coordinates for entry or exit of the entity (if applicable).
+- `id`: Unique identifier.
+- `name`: The actual name of the entity within the shopping mall.
+- `category`: The category label.
+- `description`: A textual description of the entity.
+- `boundary`: The coordinates that define the entity's boundary.
+- `doors`: Coordinates for entry or exit of the entity (if applicable).
 
 From these annotations, the top-view semantic map of the environment is obtained:  
 <p align = "center">
