@@ -70,7 +70,7 @@ Fixed attributes are determined when a character is initialized and are set thro
 }
 ```
 - `position`: `[x, y, floor]`, representing the current location of the character.
-- current_state: `[state_id, "in"]`, `[state_id, "out"]`, or `[None, None]`, representing whether the character is inside a certain state, outside a state, or not in any state at all.  
+- `current_state`: `[state_id, "in"]`, `[state_id, "out"]`, or `[None, None]`, representing whether the character is inside a certain state, outside a state, or not in any state at all.  
   The current_state changes as the character executes new actions: "in_state" type actions move the character into a state; "out_state" type actions move the character outside a state; "transition" type actions first remove the character from all states, then place it outside a target state.
 - `executing_action`: `[action_args, start_time]` or `None`, representing the action the character is currently performing and the time it started. If no action is being executed, this is `None`.
 - `behavioral_trajectory`: `[[current_state, observation, action_args, feedback, [start_t, end_t]], ...]`, representing the historical behavior trajectory of the character. Each entry contains:  
@@ -80,13 +80,13 @@ Fixed attributes are determined when a character is initialized and are set thro
   - `feedback`: Simulator feedback after executing the action.  
   - `[start_t, end_t]`: The time interval during which the action was executed.
 
-The dynamic attributes of a character are updated whenever the simulator provides new information. These attributes are synchronized periodically as the simulation progresses. Note that, although each point in the character's behavioral trajectory contains only the information mentioned above, the character's decisions are not solely based on its observations and current state. They also rely on the character's **memory**. By drawing from both historical and current information stored in the character's memory, a **context** is constructed, representing the data available to the character that influences its current decision-making.
+The dynamic attributes of a character are updated whenever the simulator provides new information. These attributes are synchronized periodically as the simulation progresses. Note that, although each point in the character's behavioral trajectory contains only the information mentioned above, the character's decisions are not solely based on its observations and current state. They also rely on the character's *memory*. By drawing from both historical and current information stored in the character's memory, a *context* is constructed, representing the data available to the character that influences its current decision-making.
 
 Before the simulation starts, each character to be added to the environment undergoes instantiation and initialization. The basic attributes of the character are generated through random sampling within specified ranges for each attribute. Fixed attributes are also determined through random sampling (with varying sampling methods). These attributes remain unchanged throughout the simulation for the day. Meanwhile, the dynamic attributes are initialized before the simulation begins and are progressively updated as the simulation unfolds.
 
 ## Context
 
-The **Context** represents the environmental and information accessible to a character in its current situation. It serves as the foundation that influences the character’s decision-making.
+The *Context* represents the environmental and information accessible to a character in its current situation. It serves as the foundation that influences the character’s decision-making.
 ```json
 {
   "memory": [],
@@ -101,7 +101,7 @@ The **Context** represents the environmental and information accessible to a cha
 Together, these factors shape the character's next behavior.
 
 For each character, the simulation process follows an iterative loop:
-```
+```text
 add_character(update)
 obtain_observation(update) -> generate_context -> get_action -> action_start(update) -> action_complete(update)
 obtain_observation(update) -> generate_context -> get_action -> action_start(update) -> action_complete(update)

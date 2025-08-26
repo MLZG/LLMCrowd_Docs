@@ -95,7 +95,7 @@ Here is an example:
 <img src="../../_static/action_structure/action_instance.jpg" width=80% style="margin-right: 0px; margin-left: 0px;">
 </p>
 
-In this example, the **dark green** node represents the high-level action, the **light green** nodes represent fixed mid-level actions, and the **light orange** nodes represent optional mid-level actions. The behavior represented by this action instance is as follows:
+In this example, the *dark green* node represents the high-level action, the *light green* nodes represent fixed mid-level actions, and the *light orange* nodes represent optional mid-level actions. The behavior represented by this action instance is as follows:
 
 <blockquote>
 The character first listens to the staff explain the menu. Then, the character places an order, taking a moment to think about what to order during the process. After placing the order, the character looks around to find a seat. Once seated, the character eats the meal, during which they make a phone call and play with their phone for a while. Finally, the character checks out and leaves.

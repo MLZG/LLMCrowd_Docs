@@ -8,11 +8,11 @@ accessible nodes within the environment, a directed complete graph formed by all
 representation of the environment.
 
 ## Scope
-The category of **state** is limited to `[store, restaurant, area, toilet]`. Entities such as `[lift, escalator, floor, unavailable area, useless]` are excluded from being considered as states. See [Environment](https://llmcrowd.readthedocs.io/en/latest/developing/method_components/environment.html) for more details of the entities.
+The category of *state* is limited to `[store, restaurant, area, toilet]`. Entities such as `[lift, escalator, floor, unavailable area, useless]` are excluded from being considered as states. See [Environment](https://llmcrowd.readthedocs.io/en/latest/developing/method_components/environment.html) for more details of the entities.
 
 
 ## Attributes
-Each state maintains several attributes, which are divided into three categories: **basic attributes**, **daytime attributes**, and **real-time attributes**. The basic attributes remain constant, the daytime attributes are fixed when the state is initialized to a specific date, and the real-time attributes change dynamically as the simulation progresses.
+Each state maintains several attributes, which are divided into three categories: *basic attributes*, *daytime attributes*, and *real-time attributes*. The basic attributes remain constant, the daytime attributes are fixed when the state is initialized to a specific date, and the real-time attributes change dynamically as the simulation progresses.
 
 ### Basic Attributes
 Each state has the following basic attributes:
