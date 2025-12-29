@@ -4,6 +4,7 @@
 <img src="../../_static/pipeline/pipeline_and_components.PNG" width=99% style="margin-right: 0px; margin-left: 0px;">
 </p>
 
+Details to be added.
 
 <!--
 【the whole pipeline】
